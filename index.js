@@ -2,8 +2,8 @@ var
     url = require('url'),
     http = require('http'),
     server = http.createServer();
-var acceptor = server.listen(7778, function () {
-    console.log('webhook relay is running http://0.0.0.0:7778')
+var acceptor = server.listen(7777, function () {
+    console.log('webhook relay is running http://0.0.0.0:7777')
 });
 
 acceptor.on('request', function (request, response) {
