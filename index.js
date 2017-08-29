@@ -16,6 +16,12 @@ acceptor.on('request', function (request, response) {
         urlPath = 'http://'+paths[1]+'-consumer:7777/webhook?mode=java'
     }else if(paths[2]=='provider'){
         urlPath = 'http://'+paths[1]+'-provider:7777/webhook?mode=java'
+    }else{
+        response.writeHead(200, {'content-type': 'application/json'})
+        var msg = '{"code":1,"msg":"mode只能为[node,consumer,provider]"}'
+        response.end(msg)
+        console.log(msg)
+        return;
     }
     var options = url.parse(urlPath);
     options.headers = request.headers;
