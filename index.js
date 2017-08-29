@@ -12,9 +12,9 @@ acceptor.on('request', function (request, response) {
     var paths = request.url.split('/')
     if(paths[2]=='node'){
         urlPath = 'http://'+paths[1]+'-node:7777/webhook?mode=node'
-    }else if(paths[2]=='java1'){
+    }else if(paths[2]=='consumer'){
         urlPath = 'http://'+paths[1]+'-consumer:7777/webhook?mode=java'
-    }else if(paths[2]=='java2'){
+    }else if(paths[2]=='provider'){
         urlPath = 'http://'+paths[1]+'-provider:7777/webhook?mode=java'
     }
     var options = url.parse(urlPath);
